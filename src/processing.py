@@ -8,10 +8,10 @@ dictionary_id = [
 ]
 
 def filter_by_state(dictionary_id: list[dict[str, Any]], state: str = 'EXECUTED'):
-   """
-   Функция, которая возвращает новый список словарей, содержащий только те словари,
-   у которых ключ state соответствует указанному значению (по умолчанию 'EXECUTED')
-   """
+    """
+    Функция, которая возвращает новый список словарей, содержащий только те словари,
+    у которых ключ state соответствует указанному значению (по умолчанию 'EXECUTED')
+    """
     dictionary_executed = []
     for index in dictionary_id:
         if index['state'] == state:
