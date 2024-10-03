@@ -8,6 +8,10 @@ dictionary_id = [
 ]
 
 def filter_by_state(dictionary_id: list[dict[str, Any]], state: str = 'EXECUTED'):
+   """
+   Функция, которая возвращает новый список словарей, содержащий только те словари,
+   у которых ключ state соответствует указанному значению (по умолчанию 'EXECUTED')
+   """
     dictionary_executed = []
     for index in dictionary_id:
         if index['state'] == state:
@@ -19,6 +23,9 @@ state = input()
 print(filter_by_state(dictionary_id, state))
 
 def sort_by_date(dictionary_id: list[dict[str, Any]], ascending: bool = True):
+    """
+    Функция, которая возвращает новый список, отсортированный по убыванию по дате(date)
+    """
     sorted_dictionary = sorted(dictionary_id, key = lambda dictionary_id: dictionary_id['date'], reverse = ascending)
     return sorted_dictionary
 
