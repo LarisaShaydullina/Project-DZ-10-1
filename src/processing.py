@@ -25,7 +25,7 @@ state = input()
 print(filter_by_state(dictionary_id, state))
 
 
-def sort_by_date(dictionary_id: list[dict[str, Any]], ascending: bool = False) -> list[dict[str, Any]]:
+def sort_by_date(dictionary_id: list[dict[str, Any]], ascending: bool = True) -> list[dict[str, Any]]:
     """
     Функция, которая возвращает новый список, отсортированный по убыванию по дате(date)
     """
