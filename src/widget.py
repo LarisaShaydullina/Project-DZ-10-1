@@ -6,6 +6,7 @@ cards_payment_system = [
     'BankNet', 'Troy', 'Белкарт'
 ]
 
+
 def mask_account_card(card_or_score: str) -> str:
     """
     Функция, которая возвращает строку с замаскированным номером карты или счета

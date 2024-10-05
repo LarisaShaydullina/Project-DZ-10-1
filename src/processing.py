@@ -18,7 +18,7 @@ def filter_by_state(dictionary_id: list[dict[str, Any]], state: str = "EXECUTED"
 
 def sort_by_date(dictionary_id: list[dict[str, Any]], ascending: str = 'True') -> list[dict[str, Any]]:
     """
-    Функция, которая возвращает новый список, отсортированный по убыванию по дате(date)
+    Функция, которая возвращает новый список, отсортированный по убыванию/возрастанию по дате(date)
     """
     for index in dictionary_id:
         if get_date(index["date"]) == 'Некорректное значение':

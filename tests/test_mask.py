@@ -2,6 +2,7 @@ from src.masks import get_mask_card_number, get_mask_account
 
 import pytest
 
+
 # номер карты может содержать от 16 до 20 цифр
 @pytest.mark.parametrize('number, mask_card', [
     ('4196556658925893', '4196 55** **** 5893'),

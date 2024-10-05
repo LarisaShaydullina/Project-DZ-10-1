@@ -34,6 +34,7 @@ def test_sort_by_date(true_sort_by_date: list[dict[str, Any]], false_sort_by_dat
     assert sort_by_date(dictionary_fix, "FALSE") == false_sort_by_date
     assert sort_by_date(dictionary_fix, "false") == false_sort_by_date
 
+
 def test_sort_by_date(false_sort_by_no_date: str) -> None:
     dictionary_no_date = [
     {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},

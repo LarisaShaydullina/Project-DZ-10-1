@@ -2,6 +2,7 @@ from src.widget import mask_account_card, get_date
 
 import pytest
 
+
 # номер карты может содержать от 16 до 20 цифр, номер счета может состоять только из 20 цифр
 @pytest.mark.parametrize('user_type_and_number, mask_account_or_card', [
     ('Счет 42303978428284094137', 'Счет **4137'),
@@ -29,11 +30,14 @@ def test_mask_account_card(user_type_and_number: str, mask_account_or_card: str)
 def test_get_date(get_date_fix: str) -> None:
     assert get_date(get_date_fix) == '11.03.2024'
 
+
 def test_get_date(get_date_no_fix: str) -> None:
     assert get_date(get_date_no_fix) == 'Некорректное значение'
 
+
 def test_get_date(get_date_no_fix_t: str) -> None:
     assert get_date(get_date_no_fix_t) == 'Некорректное значение'
+
 
 def test_get_date(get_date_no: str) -> None:
     assert get_date(get_date_no) == 'Некорректное значение'
