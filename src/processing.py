@@ -15,17 +15,17 @@ def filter_by_state(dictionary_id: list[dict[str, Any]], state: str = "EXECUTED"
     return dictionary_executed
 
 
-def sort_by_date(dictionary_id: list[dict[str, Any]], ascending: str = 'True') -> list[dict[str, Any]]:
+def sort_by_date(dictionary_id: list[dict[str, Any]], ascending: str = "True") -> Any:
     """
     Функция, которая возвращает новый список, отсортированный по убыванию/возрастанию по дате(date)
     """
     for index in dictionary_id:
-        if get_date(index["date"]) == 'Некорректное значение':
-            return 'Некорректное значение даты'
-    if ascending.title() == 'True':
+        if get_date(index["date"]) == "Некорректное значение":
+            return "Некорректное значение даты"
+    if ascending.title() == "True":
         sorted_dictionary = sorted(dictionary_id, key=lambda dictionary_id: dictionary_id["date"], reverse=ascending)
-    elif ascending.title() == 'False':
+    elif ascending.title() == "False":
         sorted_dictionary = sorted(dictionary_id, key=lambda dictionary_id: dictionary_id["date"], reverse=False)
     else:
-        return 'Некорректное значение метода сортировки'
+        return "Некорректное значение метода сортировки"
     return sorted_dictionary
