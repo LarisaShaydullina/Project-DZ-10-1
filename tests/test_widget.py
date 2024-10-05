@@ -16,7 +16,7 @@ import pytest
     ('МИР 421344398974711255', 'МИР 4213 44** **** 1255'),
     ('AmericanExpress 4213443989747112555', 'AmericanExpress 4213 44** **** 2555'),
     ('Белкарт 42134439897471125555', 'Белкарт 4213 44** **** 5555'),
-    ('Uzcard 4208125536456678777878454544', 'Некорректное значение номера счета, номера карты или типа платежной системы'),
+    ('Uzcard 420812553645667877787845', 'Некорректное значение номера счета, номера карты или типа платежной системы'),
     ('Мир 45544', 'Некорректное значение номера счета, номера карты или типа платежной системы'),
     ('fhjdshfdshks', 'Некорректное значение номера счета, номера карты или типа платежной системы'),
     ('проарпоаор 4523235688889569', 'Некорректное значение номера счета, номера карты или типа платежной системы'),
@@ -31,13 +31,13 @@ def test_get_date(get_date_fix: str) -> None:
     assert get_date(get_date_fix) == '11.03.2024'
 
 
-def test_get_date(get_date_no_fix: str) -> None:
+def test_get_date_two(get_date_no_fix: str) -> None:
     assert get_date(get_date_no_fix) == 'Некорректное значение'
 
 
-def test_get_date(get_date_no_fix_t: str) -> None:
+def test_get_date_three(get_date_no_fix_t: str) -> None:
     assert get_date(get_date_no_fix_t) == 'Некорректное значение'
 
 
-def test_get_date(get_date_no: str) -> None:
+def test_get_date_four(get_date_no: str) -> None:
     assert get_date(get_date_no) == 'Некорректное значение'

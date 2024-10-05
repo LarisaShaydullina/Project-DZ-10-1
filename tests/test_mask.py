@@ -22,7 +22,7 @@ def test_get_mask_card_number(number: str, mask_card: str) -> None:
     assert get_mask_card_number(number) == mask_card
 
 
-#Номер счета может состоять только из 20 цифр
+# Номер счета может состоять только из 20 цифр
 @pytest.mark.parametrize('account, mask_account', [
     ('42303978428284094137', '**4137'),
     ('40703978173422706025', '**6025'),
