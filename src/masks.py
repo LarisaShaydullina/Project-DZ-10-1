@@ -35,7 +35,7 @@ def get_mask_account(account: str) -> str:
         logger.info(f"Замаскированный номер счета: {mask_account}")
         return mask_account
     else:
-        logger.error("Произошла ошибка: некорректное значение номера счета")
+        logger.error("Произошла ошибка: Некорректное значение номера счета")
         return "Некорректное значение номера счета"
 
 

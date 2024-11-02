@@ -43,7 +43,7 @@ def transaction_amount(trans: dict, currency: str = "RUB") -> Any:
     """Функция принимает на вход транзакцию и возвращает сумму транзакции в рублях"""
     if trans["operationAmount"]["currency"]["code"] == currency:
         amount = trans["operationAmount"]["amount"]
-        logger.info("Код валюты в транзакции - RUB")
+        logger.info("Код валюты в транзакции RUB")
         print("Код валюты в транзакции - RUB")
     else:
         amount = currency_conversion(trans)
