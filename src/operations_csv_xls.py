@@ -61,7 +61,7 @@ def get_operations_xlsx(file_xlsx: str) -> list[dict[str, Any]]:
         return []
 
 
-print("Финансовые операции из CSV-файла")
-print(get_operations_csv("../data/transactions.csv"))
-print("Финансовые операции из XLSX-файла")
-print(get_operations_xlsx("../data/transactions_excel.xlsx"))
+# print("Финансовые операции из CSV-файла")
+# print(get_operations_csv("../data/transactions.csv"))
+# print("Финансовые операции из XLSX-файла")
+# print(get_operations_xlsx("../data/transactions_excel.xlsx"))

@@ -17,7 +17,7 @@ def trans_1() -> dict:
     }
 
 
-@patch("requests.get")
+@patch("src.external_api.requests.request")
 def test_currency_conversion(mock_get: Any, trans_1: dict) -> None:
     mock_get.return_value.json.return_value = {
         "success": True,
@@ -26,4 +26,4 @@ def test_currency_conversion(mock_get: Any, trans_1: dict) -> None:
         "date": "2024-10-29",
         "result": 325603.090204,
     }
-    assert currency_conversion(trans_1) == 325597.222791
+    assert currency_conversion(trans_1) == 325603.090204

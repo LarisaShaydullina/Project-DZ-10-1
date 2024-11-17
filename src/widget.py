@@ -2,7 +2,8 @@ from src.masks import get_mask_card_number, get_mask_account
 
 cards_payment_system = [
     "Visa",
-    "Mastercard",
+    "Visa Gold",
+    "Visa Platinum" "Mastercard",
     "Maestro",
     "МИР",
     "UnionPay",
@@ -42,13 +43,13 @@ def mask_account_card(card_or_score: str) -> str:
         for index_card in card_or_score:
             if index_card.isdigit():
                 number_of_card += index_card
-            elif index_card.isalpha():
+            else:  # index_card.isalpha():
                 type_of_card += index_card
         for i in cards_payment_system:
-            if type_of_card == i:
+            if type_of_card == i or "Visa" in i:
                 count = 1
         if (get_mask_card_number(number_of_card) != "Некорректное значение номера карты") and (count == 1):
-            return f"{type_of_card} {get_mask_card_number(number_of_card)}"
+            return f"{type_of_card}{get_mask_card_number(number_of_card)}"
         else:
             return "Некорректное значение номера счета, номера карты или типа платежной системы"
 
@@ -56,9 +57,10 @@ def mask_account_card(card_or_score: str) -> str:
 def get_date(date: str) -> str:
     """
     Функция, которая принимает на вход строку с датой в формате "2024-03-11T02:26:18.671407"
-    и возвращает строку с датой в формате "ДД.ММ.ГГГГ"а
+    и возвращает строку с датой в формате "ДД.ММ.ГГГГ"
     """
-    if len(date) == 26 and date[10] == "T" and date[4] == "-" and date[7] == "-":
+    if len(date) <= 26 and date[10] == "T" and date[4] == "-" and date[7] == "-":
+        # if date[10] == "T" and date[4] == "-" and date[7] == "-":
         date = date.split("T")[0]
         year, month, day = date.split("-")
         correct_date = f"{day}.{month}.{year}"

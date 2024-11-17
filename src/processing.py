@@ -10,7 +10,7 @@ def filter_by_state(dictionary_id: list[dict[str, Any]], state: str = "EXECUTED"
     """
     dictionary_executed = []
     for index in dictionary_id:
-        if index["state"] == state.upper():
+        if index.get("state") == state:
             dictionary_executed.append(index)
     return dictionary_executed
 

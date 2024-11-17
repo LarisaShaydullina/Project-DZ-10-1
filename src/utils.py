@@ -8,7 +8,7 @@ def financial_transactions(path_to_file: str) -> list:
     """Функция принимает на вход путь до JSON-файла и возвращает список словарей с данными о
     финансовых транзакциях."""
     try:
-        print(f"Получение данных из файла {path_to_file}")
+        # print(f"Получение данных из файла {path_to_file}")
         with open(path_to_file, encoding="utf-8") as financial_file:
             try:
                 transactions = json.load(financial_file)
@@ -18,7 +18,7 @@ def financial_transactions(path_to_file: str) -> list:
         if not isinstance(transactions, list):
             print("Список транзакций пуст")
             return []
-        print("Список словарей с данными о финансовых транзакциях")
+        # print("Список словарей с данными о финансовых транзакциях")
         return transactions
     except FileNotFoundError:
         print("Файл с транзакциями не найден")
@@ -36,17 +36,17 @@ def transaction_amount(trans: dict, currency: str = "RUB") -> Any:
     return amount
 
 
-print(financial_transactions("C:/Users/Admin/PycharmProjects/my_prj/Project_DZ_9.1/data/operations.json"))
-print(
-    transaction_amount(
-        {
-            "id": 518707726,
-            "state": "EXECUTED",
-            "date": "2018-11-29T07:18:23.941293",
-            "operationAmount": {"amount": "3348.98", "currency": {"name": "USD", "code": "USD"}},
-            "description": "Перевод с карты на карту",
-            "from": "MasterCard 3152479541115065",
-            "to": "Visa Gold 9447344650495960",
-        }
-    )
-)
+# print(financial_transactions("C:/Users/Admin/PycharmProjects/my_prj/Project_DZ_9.1/data/operations.json"))
+# print(
+#     transaction_amount(
+#         {
+#             "id": 518707726,
+#             "state": "EXECUTED",
+#             "date": "2018-11-29T07:18:23.941293",
+#             "operationAmount": {"amount": "3348.98", "currency": {"name": "USD", "code": "USD"}},
+#             "description": "Перевод с карты на карту",
+#             "from": "MasterCard 3152479541115065",
+#             "to": "Visa Gold 9447344650495960",
+#         }
+#     )
+# )
